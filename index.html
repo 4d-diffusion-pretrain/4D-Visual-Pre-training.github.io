@@ -162,14 +162,13 @@
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
-
+     <h2 class="title is-3">Real-world Tasks</h2>
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Pick</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            The robot grasps the red static block and places it into the bowl.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dollyzoom-stacked.mp4"
@@ -181,12 +180,12 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Draw</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              The robot picks up a wooden pen and draws a specified pattern on the sand table.
+
             </p>
             <video id="matting-video" controls playsinline height="100%">
               <source src="./static/videos/matting.mp4"
@@ -210,10 +209,9 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Trace</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+          The robot grabs a randomly moving toy chicken into a bowl.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dollyzoom-stacked.mp4"
@@ -225,12 +223,11 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">Push</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+              The robot pushes the soccer ball into the goal.
             </p>
             <video id="matting-video" controls playsinline height="100%">
               <source src="./static/videos/matting.mp4"
@@ -258,7 +255,7 @@
 
           </p>
           <p>
-          yet these pre-trained representations are mostly on 2D images, neglecting the inherent 3D nature of the world. However, due to the scarcity of large-scale 3D data, it is still hard to extract a universal 3D representation from web datasets. Instead, we seek for a general visual pre-training framework that could improve all 3D representations as an alternative. Our framework, called DP4, is a novel 4D Diffusion Pre-training framework for real-world robot learning. DP4 frames the visual pre-training objective as a next-point-cloud-prediction problem, models the prediction model as a diffusion model, and pre-trains the model on in-domain task datasets directly. 
+          yet these pre-trained representations are mostly on 2D images, neglecting the inherent 3D nature of the world. However, due to the scarcity of large-scale 3D data, it is still hard to extract a universal 3D representation from web datasets. Instead, we seek for a general visual pre-training framework that could improve all 3D representations as an alternative. Our framework, called <b>DP4<\b>, is a novel 4D Diffusion Pre-training framework for real-world robot learning. DP4 frames the visual pre-training objective as a next-point-cloud-prediction problem, models the prediction model as a diffusion model, and pre-trains the model on in-domain task datasets directly. 
           </p>
           <p>
            Across four real-world manipulation tasks, DP4 boosts the average success rate of 3D Diffusion Policy (DP3) for these tasks by 25%, and DP3 pre-trained by DP4 achieves state-of-the-art performance across imitation learning methods. Moreover, the efficacy of DP4 extends across various point cloud encoders and datasets, showing its potential in training on large datasets.
