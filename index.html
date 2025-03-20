@@ -6,7 +6,7 @@
         content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
   <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Robot Learning with 4D Diffusion Pre-training</title>
+  <title>4D Visual Pre-training for Robot Learning</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -91,15 +91,21 @@
           <h1 class="title is-1 publication-title"> Robot Learning with 4D Diffusion Pre-training </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://jackhck.github.io">Chengkai Hou</a><sup>1</sup>,</span>
+              <a href="https://jackhck.github.io">Chengkai Hou</a><sup>5</sup>,</span>
             <span class="author-block">
               <a href="https://yanjieze.com">Yanjie  Ze</a><sup>2</sup>,</span>
+              <span class="author-block">
+              <a href="">Yankai Fu</a><sup>5</sup>,
+            <span class="author-block">
+              <a href="">Zeyu Gao</a><sup>5</sup>,
             <span class="author-block">
               <a href="">Yue Yu</a><sup>3</sup>,
             <span class="author-block">
               <a href="">Songbo  Hu</a><sup>3</sup>,
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Huazhe Xu</a><sup>1,3,4</sup>
+              <a href="">Shanghang Zhang</a><sup>5</sup>,
+            <span class="author-block">
+              <a href="http://hxu.rocks/index.html">Huazhe Xu</a><sup>1,3,4</sup>
           </div>
 
           <div class="is-size-5 publication-authors">
@@ -107,6 +113,7 @@
             <span class="author-block"><sup>2</sup>Stanford University </span>
             <span class="author-block"><sup>3</sup>Tsinghua University, IIIS </span>
             <span class="author-block"><sup>4</sup>Shanghai AI Lab  </span>
+            <span class="author-block"><sup>5</sup>Peking University  </span>
           </div>
 
           <div class="column has-text-centered">
@@ -240,15 +247,14 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            General visual representations learned from web-scale datasets for robotics such as R3M and MVP have achieved great success in recent years, enabling data-efficient robot learning on manipulation tasks;
-
+            General visual representations learned from web-scale datasets for robotics have achieved great success in recent years, enabling data-efficient robot learning on manipulation tasks;
           </p>
           <p>
-          yet these pre-trained representations are mostly on 2D images, neglecting the inherent 3D nature of the world. However, due to the scarcity of large-scale 3D data, it is still hard to extract a universal 3D representation from web datasets. Instead, we seek for a general visual pre-training framework that could improve all 3D representations as an alternative. Our framework, called <b> DP4 </b>, is a novel 4D Diffusion Pre-training framework for real-world robot learning. DP4 frames the visual pre-training objective as a next-point-cloud-prediction problem, models the prediction model as a diffusion model, and pre-trains the model on in-domain task datasets directly. 
+          yet these pre-trained representations are mostly on 2D images, neglecting the inherent 3D nature of the world. However, due to the scarcity of large-scale 3D data, it is still hard to extract a universal 3D representation from web datasets. Instead, we seek for a general visual pre-training framework that could improve all 3D representations as an alternative. Our framework, called <b> FVP </b>, is a novel 4D Visual Pre-training framework for real-world robot learning. FVP frames the visual pre-training objective as a next-point-cloud-prediction problem, models the prediction model as a diffusion model, and pre-trains the model on in-domain task datasets directly. 
           </p>
           <p>
-           Across four real-world manipulation tasks, DP4 boosts the average success rate of 3D Diffusion Policy (DP3) for these tasks by <b> 25% </b>, and DP3 pre-trained by DP4 achieves state-of-the-art performance across imitation learning methods. Moreover, the efficacy of DP4 extends across various point cloud encoders and datasets, showing its potential in training on large datasets.
-          </p>
+           Across twelve real-world manipulation tasks, FVP boosts the average success rate of 3D Diffusion Policy (DP3) for these tasks by 28\%. The FVP pre-trained DP3 achieves state-of-the-art performance across imitation learning methods. Moreover, the efficacy of FVP adapts across various point cloud encoders and datasets. 
+   Finally, we apply FVP to the RDT-1B, a larger Vision-Language-Action robotic model, enhancing its performance on various robot tasks.
         </div>
       </div>
     </div>
@@ -260,7 +266,7 @@
         <h2 class="title is-3">Model Overview</h2>
         <div class="content has-text-justified">
           <p>
-           DP4 mainly consists of two parts: a 3D visual encoder and a point cloud diffusion model. The 3D visual encoder transforms the point cloud
+           FVP mainly consists of two parts: a 3D visual encoder and a point cloud diffusion model. The 3D visual encoder transforms the point cloud
 at time step t into the latent visual representation, and the diffusion model uses the latent visual
 representation and robotic actions to predict the point cloud at step time t + 1. During the policy
 learning stage, we train the pre-trained visual model and the policy backbone jointly.
