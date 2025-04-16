@@ -302,57 +302,47 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <!-- Single Row with Left Column (UR5 Gripper) and Right Columns (2x2 Videos) -->
+        <!-- Single Row with Left Column (UR5 Gripper) and Right Columns (1x3 Videos) -->
         <div class="columns is-centered">
           <!-- Left Column: UR5 Gripper -->
           <div class="column is-one-quarter">
             <div class="content">
-              <h2 class="title is-3">AgileX Dual-arm </h2>
+              <h2 class="title is-3">AgileX Dual-arm</h2>
               <figure class="image is-128x128">
-                <img src="./static/images/dual.jpg" alt="AgileX dual-arm ">
+                <img src="./static/images/dual.jpg" alt="AgileX dual-arm">
               </figure>
             </div>
           </div>
 
-          <!-- Right Columns: 2x2 Video Grid -->
+          <!-- Right Columns: 1x3 Video Grid -->
           <div class="column is-three-quarters">
             <div class="columns is-multiline is-centered">
-              <!-- Task 1: Pick -->
-              <div class="column is-half">
+              <!-- Task 1: PutBox -->
+              <div class="column is-one-third">
                 <div class="content">
                   <h2 class="title is-4">PutBox</h2>
-                  <video id="pick-video" autoplay controls muted loop playsinline height="100%">
+                  <video id="putbox-video" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
                     <source src="./static/videos/dual_fruit.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
 
-              <!-- Task 2: Draw -->
-              <div class="column is-half">
+              <!-- Task 2: StackBowl -->
+              <div class="column is-one-third">
                 <div class="content">
                   <h2 class="title is-4">StackBowl</h2>
-                  <video id="draw-video" controls playsinline height="100%">
+                  <video id="stackbowl-video" controls playsinline style="max-width: 100%; height: auto;">
                     <source src="./static/videos/dual_cup.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
 
-              <!-- Task 3: Trace -->
-              <div class="column is-half">
+              <!-- Task 3: WipePlate -->
+              <div class="column is-one-third">
                 <div class="content">
                   <h2 class="title is-4">WipePlate</h2>
-                  <video id="trace-video" autoplay controls muted loop playsinline height="100%">
+                  <video id="wipeplate-video" autoplay controls muted loop playsinline style="max-width: 100%; height: auto;">
                     <source src="./static/videos/dual_wish.mp4" type="video/mp4">
-                  </video>
-                </div>
-              </div>
-
-              <!-- Task 4: Push -->
-              <div class="column is-half">
-                <div class="content">
-                  <h2 class="title is-4">Push</h2>
-                  <video id="push-video" controls playsinline height="100%">
-                    <source src="./static/videos/flipcup.mp4" type="video/mp4">
                   </video>
                 </div>
               </div>
